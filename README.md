@@ -1,22 +1,20 @@
+mobx-react-boilerplate
+=====================
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+A minimal application that combines [MobX](https://mobxjs.github.io/mobx) with [React](https://facebook.github.io/react).
+Supports ES6 and JSX compilation through babel.
+
+* For a more sophisticated project to start with, see the full TodoMVC implementation: [mobx-react-todomvc](https://github.com/mobxjs/mobx-react-todomvc).
+
+### Run the example
+
+```
+npm install
+npm start
+open http://localhost:3000
+```
 
 
-Welcome to your Node.js project on Cloud9 IDE!
+### Credits
 
-This chat example showcases how to use `socket.io` with a static `express` server.
-
-## Running the server
-
-1) Open `server.js` and start the app by clicking on the "Run" button in the top menu.
-
-2) Alternatively you can launch the app from the Terminal:
-
-    $ node server.js
-
-Once the server is running, open the project in the shape of 'https://projectname-username.c9.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+* [Mendix](http://github.com/mendix) for providing the opportunity to battle test this approach (we're hiring!).

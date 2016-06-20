@@ -1,11 +1,16 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var sHost = (process.env.C9_HOSTNAME)
+            ?'https://' + process.env.C9_HOSTNAME
+            :'http://localhost:3000';
+
 module.exports = {
   devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:3000',
+    // 'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?' + sHost,
     'webpack/hot/only-dev-server',
     './src/index'
   ],

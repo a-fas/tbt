@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './mdpane.less';
 
 class MDPane extends Component {
   static propTypes = {

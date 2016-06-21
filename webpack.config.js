@@ -9,7 +9,6 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
-    // 'webpack-dev-server/client?http://localhost:3000',
     'webpack-dev-server/client?' + sHost,
     'webpack/hot/only-dev-server',
     './src/index'
@@ -30,6 +29,7 @@ module.exports = {
       test: /\.jsx?$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
-    }]
+    },
+    { test: /\.less$/, loader: 'style!css!less' }]
   }
 };

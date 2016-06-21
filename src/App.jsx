@@ -5,6 +5,8 @@ import DevTools from 'mobx-react-devtools';
 import MDPane from './mdpane.jsx';
 import {CostCenters, CostElements} from './mdobj.js';
 
+import './App.less';
+
 @observer
 class App extends Component {
   render() {

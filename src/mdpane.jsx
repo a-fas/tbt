@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 import './mdpane.less';
 
+@observer
 class MDPane extends Component {
   static propTypes = {
     title: React.PropTypes.string,
-    md: React.PropTypes.object
+    md:    React.PropTypes.object
   };
 
   render() {
-    let list = this.props.md.list.map(item => <li key={item.id}>{item.name}</li>);
     return (
       <div className='md-container'>
         <span className='md-title'>{this.props.title}</span>
-        <ul>{list}</ul>
+        <ul>{this.props.md.mdlist.map(item => <li key={item.id}>{item.name}</li>)}</ul>
       </div>
     );
   }

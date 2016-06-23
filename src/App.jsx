@@ -12,13 +12,13 @@ import './App.less';
 class App extends Component {
   sCC = {};
   sCE = {};
-  
+
   constructor() {
     super();
     this.cCC = new CostCenters;
     this.cCE = new CostElements;
   }
-  
+
   render() {
 
     return (
@@ -30,20 +30,20 @@ class App extends Component {
       </div>
     );
   }
-  
+
   onClick = () => {
-    
+
     axios.get('https://api.github.com/users/a-fas')
       .then((response) => console.log(response))
       .catch((error)   => console.log(error));
-    
+
     // try {
     //   const response = await axios.get('https://api.github.com/users/a-fas');
     //   console.log(response.data);
     // } catch (err) {
     //   console.error(err);
-    // }    
-    
+    // }
+
     // this.cCE.add({id: this.cCE.mdlist.length + 1, name: 'holy fuck it works !'});
   }
 };

@@ -1,4 +1,4 @@
-var path = require('path');
+var path    = require('path');
 var webpack = require('webpack');
 
 var sHost = (process.env.C9_HOSTNAME)
@@ -9,21 +9,18 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
-    
-    // 'webpack-dev-server/client?' + sHost,
-    // 'webpack/hot/only-dev-server',
-
-    'webpack/hot/dev-server',  
-    'webpack-hot-middleware/client',
-    
+    'webpack-dev-server/client?' + sHost,
+    'webpack/hot/only-dev-server',
+    // 'webpack/hot/dev-server',
+    // 'webpack-hot-middleware/client',
     './src/index'
   ],
   output: {
-    path: '/', //path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
-  target: 'web',
+  // target: 'web',
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],

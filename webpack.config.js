@@ -7,6 +7,7 @@ var sHost = (process.env.C9_HOSTNAME)
 
 module.exports = {
   devtool: 'eval',
+  target: 'web',
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?' + sHost,
@@ -20,7 +21,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static/'
   },
-  // target: 'web',
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
@@ -32,7 +32,9 @@ module.exports = {
       test: /\.jsx?$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
-    },
-    { test: /\.less$/, loader: 'style!css!less' }]
+    }, {
+      test: /\.less$/,
+      loader: 'style!css!less'
+    }]
   }
 };

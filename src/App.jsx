@@ -8,6 +8,8 @@ import {CostCenters, CostElements} from './mdobj.js';
 
 import './App.less';
 
+import { Button } from 'react-bootstrap';
+
 @observer
 class App extends Component {
   sCC = {};
@@ -25,7 +27,10 @@ class App extends Component {
       <div className='page'>
         <MDPane title='CostCenters' md={this.cCC} />
         <MDPane title='CostElements' md={this.cCE} />
-        <a href="#" onClick={this.onClick}>Add</a>
+        {/*<a href="#" onClick={this.onClick}>Add</a>*/}
+
+        <Button bsStyle="primary" onClick={this.onClick}>Default button</Button>
+
         <DevTools />
       </div>
     );

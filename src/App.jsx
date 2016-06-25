@@ -1,56 +1,22 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
-import axios from 'axios';
-
-import MDPane from './mdpane.jsx';
-import {CostCenters, CostElements} from './mdobj.js';
-
+import { routes } from './router.jsx';
 import './App.less';
-
-import { Button } from 'react-bootstrap';
 
 @observer
 class App extends Component {
-  sCC = {};
-  sCE = {};
 
-  constructor() {
-    super();
-    this.cCC = new CostCenters;
-    this.cCE = new CostElements;
+  getChildContext() {
+    return {appState: this.props.appState};
   }
 
   render() {
-
-    return (
-      <div className='page'>
-        <MDPane title='CostCenters' md={this.cCC} />
-        <MDPane title='CostElements' md={this.cCE} />
-        {/*<a href="#" onClick={this.onClick}>Add</a>*/}
-
-        <Button bsStyle="primary" onClick={this.onClick}>Default button</Button>
-
-        <DevTools />
-      </div>
-    );
+    return routes;
   }
+};
 
-  onClick = () => {
-
-    axios.get('https://api.github.com/users/a-fas')
-      .then((response) => console.log(response))
-      .catch((error)   => console.log(error));
-
-    // try {
-    //   const response = await axios.get('https://api.github.com/users/a-fas');
-    //   console.log(response.data);
-    // } catch (err) {
-    //   console.error(err);
-    // }
-
-    // this.cCE.add({id: this.cCE.mdlist.length + 1, name: 'holy fuck it works !'});
-  }
+App.childContextTypes = { // ??? Why not in class declaration ???
+  appState: React.PropTypes.object
 };
 
 export default App;

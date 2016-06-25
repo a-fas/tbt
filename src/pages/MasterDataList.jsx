@@ -4,6 +4,10 @@ import { observer } from 'mobx-react';
 
 @observer
 class MasterDataList extends Component {
+  static propTypes = {
+    masterData: React.PropTypes.object.isRequired
+  }
+
   render() {
     return(
       <Table hover>
@@ -15,10 +19,6 @@ class MasterDataList extends Component {
       </Table>
     )
   }
-}
-
-MasterDataList.propTypes = {
-  masterData: React.PropTypes.object.isRequired
 }
 
 export default MasterDataList;

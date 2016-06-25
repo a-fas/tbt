@@ -5,6 +5,10 @@ import MasterDataList from './MasterDataList';
 
 @observer
 class MasterData extends Component {
+  static contextTypes = {
+    appState: React.PropTypes.object
+  };
+
   render() {
     const mdManager = this.context.appState.mdManager;
 
@@ -16,22 +20,16 @@ class MasterData extends Component {
 
     return (
       <div>
-        <h1>{md.displayName}</h1>
+        <Button onClick={this.handleClick}>ClickMe</Button>
         <MasterDataList masterData={md}/>
-        <Button onClick={this.onClick}>ClickMe</Button>
       </div>
     );
   }
 
-  onClick = () => {
+  handleClick = () => {
     let md = this.context.appState.mdManager[this.props.params.mdname];
     md.add({id: md.items.length+1, name: 'Hello'});
   }
-
 }
-
-MasterData.contextTypes = {
-  appState: React.PropTypes.object
-};
 
 export default MasterData;

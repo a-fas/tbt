@@ -35,6 +35,9 @@ module.exports = {
     }, {
       test: /\.less$/,
       loader: 'style!css!less'
+    }, {
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      loader: 'url?limit=25000'
     }]
   }
 };

@@ -5,6 +5,9 @@ import './App.less';
 
 @observer
 class App extends Component {
+  static childContextTypes = { // ??? Why not in class declaration ???
+    appState: React.PropTypes.object
+  };
 
   getChildContext() {
     return {appState: this.props.appState};
@@ -13,10 +16,6 @@ class App extends Component {
   render() {
     return routes;
   }
-};
-
-App.childContextTypes = { // ??? Why not in class declaration ???
-  appState: React.PropTypes.object
 };
 
 export default App;

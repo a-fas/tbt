@@ -5,7 +5,6 @@ class MDBase {
   @observable items = [];
 
   constructor() {
-    console.log('[MDBase]()');
     this.fetchInitial();
   }
 
@@ -23,7 +22,6 @@ class MDBase {
   }
 
   fetchInitial() {
-    console.log('[MDBase]fetch()');
     // implement in subclasses
   }
 }

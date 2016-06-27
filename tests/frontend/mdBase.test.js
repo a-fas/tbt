@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import MDBase from '../../src/stores/mdBase';
+import MDBase from '../../frontend/stores/md/mdBase';
 
 describe('MDBase class', () => {
   it('Add an item', () => {

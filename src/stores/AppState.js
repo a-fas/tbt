@@ -1,11 +1,7 @@
-import MasterDataManager from './MasterDataManager';
+import MasterDataManager from './md/MasterDataManager';
 
 class AppState {
   mdManager = new MasterDataManager;
-
-  constructor() {
-
-  }
 }
 
 export default AppState;

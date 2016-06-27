@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Tabs, Tab } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Tabs, Tab, Col } from 'react-bootstrap';
 
 export default class MasterDataToc extends Component {
   static contextTypes = {
@@ -10,18 +8,25 @@ export default class MasterDataToc extends Component {
   };
 
   render() {
+    console.log('MasterDataToc.render()'); // TODO: fix double rendering at first call
+
     const mdManager = this.context.appState.mdManager;
 
-    console.log('MasterDataToc.render()');
-
     return (
-      <Tabs defaultActiveKey='costcenters' animation={false} onSelect={this.handleSelect} id='master-data-tabs'>
-        {mdManager.list().map(i =>
-          <Tab eventKey={i} title={mdManager[i].displayName} key = {i}>
-            {this.props.children}
-          </Tab>
-        )}
-      </Tabs>
+      <Col sm={12}>
+        <Tabs defaultActiveKey={mdManager.first()}
+          animation={false}
+          onSelect={this.handleSelect}
+          id='master-data-tabs'>
+
+          {mdManager.list().map(i =>
+            <Tab eventKey={i.name} title={i.displayName} key = {i.name}>
+              {this.props.children}
+            </Tab>
+          )}
+
+        </Tabs>
+      </Col>
     );
   }
 
@@ -31,7 +36,7 @@ export default class MasterDataToc extends Component {
   }
 
   componentWillMount() {
-    const mdList = this.context.appState.mdManager.list();
-    this.handleSelect(mdList[0]); // TODO: fix double rendering at first call
+    const mdManager = this.context.appState.mdManager;
+    this.handleSelect(mdManager.first()); // TODO: fix double rendering at first call
   }
 }

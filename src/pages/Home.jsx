@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import { Row, Col } from 'react-bootstrap';
 
-export default class Home extends Component {
-  render() {
-    return (
-      <div>Home:</div>
-    );
-  }
+function Home() {
+  return <Col smOffset={1} sm={10}>Home page</Col>;
 }
+
+export default Home;

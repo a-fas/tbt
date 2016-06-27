@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DevTools from 'mobx-react-devtools';
 import { Link, IndexLink } from 'react-router';
 import { Navbar, Nav, NavItem, Image } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 import LogoIcon from '../assets/abacus-icon.png';
 
@@ -12,7 +13,7 @@ import LogoIcon from '../assets/abacus-icon.png';
 export default class Main extends Component {
   render() {
     return (
-      <div>
+      <Grid>
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
@@ -32,9 +33,12 @@ export default class Main extends Component {
           </Nav>
         </Navbar>
 
-        {this.props.children}
+        <Row>
+          {this.props.children}
+        </Row>
+
         <DevTools />
-      </div>
+      </Grid>
     );
   }
 }

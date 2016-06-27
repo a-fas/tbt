@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Table, Button } from 'react-bootstrap';
+import { Table, Button, Glyphicon } from 'react-bootstrap';
 import { observer } from 'mobx-react';
-import MasterDataList from './MasterDataList';
+import MasterDataList from '../components/MasterDataList';
 
 @observer
 class MasterData extends Component {
@@ -13,17 +13,18 @@ class MasterData extends Component {
     const mdManager = this.context.appState.mdManager;
 
     if (!mdManager.hasData(this.props.params.mdname)) {
-      return(<div>Unknown master data type</div>)
+      return <div>Unknown master data type</div>
+    } else {
+      return (
+        <div>
+          <Button bsStyle='link' onClick={this.handleClick} className='pull-right'>
+            <Glyphicon glyph='plus' style={{paddingRight: '4px'}} />
+            Add item
+          </Button>
+          <MasterDataList masterData={mdManager[this.props.params.mdname]}/>
+        </div>
+      );
     }
-
-    const md = mdManager[this.props.params.mdname];
-
-    return (
-      <div>
-        <Button onClick={this.handleClick}>ClickMe</Button>
-        <MasterDataList masterData={md}/>
-      </div>
-    );
   }
 
   handleClick = () => {

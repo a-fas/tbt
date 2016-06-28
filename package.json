@@ -7,7 +7,7 @@
   "description": "Tiny book test",
   "scripts": {
     "start": "node feserver.js",
-    "server": "node beserver.js",
+    "server": "node --harmony beserver.js",
     "lint": "eslint src",
     "test": "babel-node node_modules/mocha/bin/_mocha tests/*/*.js"
   },

@@ -1,1 +1,3 @@
-console.log('Hello world');
+var serverApp = require('./backend/serverapp');
+
+serverApp();

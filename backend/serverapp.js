@@ -1,8 +1,8 @@
 var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
-var routes     = require('./routes');
-var mongoose   = require('mongoose');
+// var routes     = require('./routes');
+// var mongoose   = require('mongoose');
 
 function runApp() {
   // mongoose.connect('mongodb://localhost/mydb');
@@ -12,7 +12,7 @@ function runApp() {
   app.use(bodyParser.json());
 
   // Main API route
-  app.use('/api/v1', routes);
+  // app.use('/api/v1', routes);
 
   app.get('/', function(request, response) {
     response.send('Hello wrold from tbt');
@@ -20,7 +20,10 @@ function runApp() {
 
   // Start server listening
   var port = process.env.PORT || 8080;
-  app.listen(port, process.env.IP || 'localhost');
+  app.listen(port, (err, result) => {
+    if (err) console.log(err);
+    console.log('Node app is running');
+  });
   console.log('TB listening on port: ' + port);
 }
 

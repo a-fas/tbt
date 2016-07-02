@@ -6,7 +6,7 @@ var mongoose   = require('mongoose');
 
 function runApp() {
   var uristring =
-    process.env.MONGODB_URL ||
+    process.env.MONGODB_URI ||
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/mydb';

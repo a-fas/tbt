@@ -11,13 +11,17 @@ function runApp() {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
-  // Define a prefix for all routes
+  // Main API route
   app.use('/api/v1', routes);
 
-  // Start server listening on port 8080
+  app.get('/', function(request, response) {
+    response.send('Hello wrold from tbt');
+  });
+
+  // Start server listening
   var port = process.env.PORT || 8080;
-  app.listen(port);
-  console.log('RESTAPI listening on port: ' + port);
+  app.listen(port, process.env.IP || 'localhost');
+  console.log('TB listening on port: ' + port);
 }
 
 module.exports = runApp;

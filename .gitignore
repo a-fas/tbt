@@ -1,4 +1,18 @@
-node_modules
+# Builds and logs
+node_modules/
+dist/
+coverage/
+logs/*
 npm-debug.log
+
+# Local files
 .DS_Store
-dist
+*.env
+*.dev
+
+# Configs
+etc/config.json
+
+# Docker
+Dockerfile
+docker-compose.yml

@@ -7,11 +7,7 @@ var mongoose   = require('mongoose');
 function runApp() {
   var uristring =
     process.env.MONGODB_URI ||
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
     'mongodb://localhost/mydb';
-
-  // mongoose.connect('mongodb://localhost/mydb');
 
   mongoose.connect(uristring, function (err, res) {
     if (err) {
@@ -34,11 +30,11 @@ function runApp() {
 
   // Start server listening
   var port = process.env.PORT || 8080;
-  app.listen(port, (err, result) => {
+  var listener = app.listen(port, (err, result) => {
     if (err) console.log(err);
-    console.log('Node app is running');
+    console.log('Node app is running on port:', listener.address().port);
   });
-  console.log('TB listening on port: ' + port);
+  console.log('App is listening on port: ' + port);
 }
 
 module.exports = runApp;

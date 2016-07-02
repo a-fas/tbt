@@ -6,9 +6,9 @@ logs/*
 npm-debug.log
 
 # Local files
+/*.env
 .DS_Store
-*.env
-*.dev
+#*.dev
 
 # Configs
 etc/config.json

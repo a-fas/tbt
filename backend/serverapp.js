@@ -3,6 +3,7 @@ var app        = express();
 var bodyParser = require('body-parser');
 var routes     = require('./routes');
 var mongoose   = require('mongoose');
+var cors       = require('cors');
 
 function runApp() {
   var uristring =
@@ -20,6 +21,7 @@ function runApp() {
   // express app will use body-parser to get data from POST
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
+  app.use(cors({ origin: '*' })); // We allow any origin because we DO NOT USE cookies and basic auth 
 
   // Main API route
   app.use('/api/v1', routes);

@@ -1,8 +1,8 @@
 import { computed, observable, asMap } from 'mobx';
-import MDBase from './mdBase';
-import CostCenters  from './mdCostCenters';
-import CostElements from './mdCostElements';
-import Clients      from './mdClients';
+import Base         from './Base';
+import CostCenters  from './CostCenters';
+import CostElements from './CostElements';
+import Clients      from './Clients';
 
 class MasterDataManager {
 
@@ -11,17 +11,17 @@ class MasterDataManager {
   clients      = new Clients;
 
   hasData(mdName) {
-    return this.hasOwnProperty(mdName) && this[mdName] instanceof MDBase;
+    return this.hasOwnProperty(mdName) && this[mdName] instanceof Base;
   }
 
   list() {
     return Object.keys(this)
-      .filter(i => this[i] instanceof MDBase)
+      .filter(i => this[i] instanceof Base)
       .map(i => ({name: i, displayName: this[i].displayName}));
   }
 
   first() {
-    return Object.keys(this).find(i => this[i] instanceof MDBase);
+    return Object.keys(this).find(i => this[i] instanceof Base);
   }
 }
 

@@ -1,6 +1,7 @@
 import { observable, action } from 'mobx';
+import axios from 'axios';
 
-class MDBase {
+class Base {
   displayName       = '';
   @observable items = [];
 
@@ -24,6 +25,18 @@ class MDBase {
   fetchInitial() {
     // implement in subclasses
   }
+
+  queryAPI(url, maper) {
+    axios.get('http://localhost:8080/api/v1' + url)
+      .then((response) => {
+        response.data.map(maper)
+        console.log(url + ': ' + this.items.map(i => i.name).join(', '));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+  }
 }
 
-export default MDBase;
+export default Base;

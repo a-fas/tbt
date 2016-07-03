@@ -1,6 +1,10 @@
 var express = require('express');
 var Message = require('./models/message');
 
+var Clients      = require('./services/md/clients');
+var CostCenters  = require('./services/md/costcenters');
+var CostElements = require('./services/md/costelements');
+
 // Get the router
 var router = express.Router();
 
@@ -62,6 +66,12 @@ router.route('/messages/:message_id')
             res.json({ message: 'Successfully deleted message!' });
         });
     });
+
+
+router.route('/clients').get(Clients.List);
+router.route('/costcenters').get(CostCenters.List);
+router.route('/costelements').get(CostElements.List);
+
 
 function dateDisplayed(timestamp) {
     var date = new Date(timestamp);

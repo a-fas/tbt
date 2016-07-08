@@ -1,5 +1,6 @@
 {
   "presets": [
+    "node6",
     "react",
     "es2015",
     "stage-1"

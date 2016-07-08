@@ -5,7 +5,7 @@ import './App.less';
 
 @observer
 class App extends Component {
-  static childContextTypes = { // ??? Why not in class declaration ???
+  static childContextTypes = {
     appState: React.PropTypes.object
   };
 

@@ -31,7 +31,10 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       loaders: ['babel'],
-      include: path.join(__dirname, 'frontend')
+      include: path.join(__dirname, 'frontend'),
+      // query: {
+      //   presets: ['es2015', 'react', 'stage-1']
+      // }
     }, {
       test: /\.less$/,
       loader: 'style!css!less'

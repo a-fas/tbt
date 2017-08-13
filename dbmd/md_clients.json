@@ -1,0 +1,20 @@
+{
+	"_id" : ObjectId("577224af995232f8163ddaf8"),
+	"name" : "Vasya"
+},
+{
+	"_id" : ObjectId("577224af995232f8163ddaf9"),
+	"name" : "Petya"
+},
+{
+	"_id" : ObjectId("577224af995232f8163ddafa"),
+	"name" : "Masha"
+},
+{
+	"_id" : ObjectId("577224af995232f8163ddafb"),
+	"name" : "Grisha"
+},
+{
+	"_id" : ObjectId("577224af995232f8163ddafc"),
+	"name" : "Bartolomeo"
+},

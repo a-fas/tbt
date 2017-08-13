@@ -1,0 +1,5 @@
+{
+	"_id" : ObjectId("577802c85c1f325419f1ff9e"),
+	"text" : "Hello world",
+	"user" : "user1"
+},

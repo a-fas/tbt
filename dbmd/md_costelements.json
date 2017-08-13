@@ -1,0 +1,20 @@
+{
+	"_id" : ObjectId("57722486995232f8163ddaf0"),
+	"name" : "IT"
+},
+{
+	"_id" : ObjectId("57722486995232f8163ddaf1"),
+	"name" : "Income"
+},
+{
+	"_id" : ObjectId("57722486995232f8163ddaf2"),
+	"name" : "Office"
+},
+{
+	"_id" : ObjectId("57722486995232f8163ddaf3"),
+	"name" : "Salary"
+},
+{
+	"_id" : ObjectId("57722486995232f8163ddaf4"),
+	"name" : "Taxes"
+},
